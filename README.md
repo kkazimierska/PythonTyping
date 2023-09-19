@@ -1,5 +1,3 @@
-[Python Typing](https://realpython.com/python-type-checking/)
-
 ## Type Systems
 
 **Dynamic typing** - Python interpreter does type checking only as code runs.
@@ -43,6 +41,7 @@ len(the_hobbit)
 ```
 
 ## Hello Types
+In this section you’ll see how to add type hints to a function.
 Create a function that will add headline as role description, it should have an `bool` type argument `upper`, that convert text to upper case letter.
 
 ```
@@ -61,14 +60,19 @@ print(headline("Implement clean and scalable code.", upper = True))
 
 
 ## Pros and Cons
-Pros:
+**Pros**:
+
 Type hints help document your code.
+
 Type hints improve IDEs and linters. (Check function).
+
 Type hints help you build and maintain a cleaner architecture.
 
 
-Cons:
+**Cons**:
+
 Type hints take developer time and effort to add.
+
 ## Annotations
 
 When running the code, you can also inspect the annotations. They are stored in a special .__annotations__ attribute on the function:
@@ -143,3 +147,11 @@ Developer(
 )
 ```
 
+
+
+## Reference
+[Python Typing](https://realpython.com/python-type-checking/)
+
+[PEP 484](https://peps.python.org/pep-0484/)
+
+[Pydatnic](https://docs.pydantic.dev/latest/)
