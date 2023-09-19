@@ -41,24 +41,105 @@ class TheHobbit:
 the_hobbit = TheHobbit()
 len(the_hobbit)
 ```
-**Solution**
-pydantic enforces type hints at runtime and provides user-friendly errors when data is invalid. Unlike the type hints introduced above which may seem cosmetic, the models introduced by pydantic are productive and would change your data.
-
-Check:
-```
-python -i task_validator.py
-User(**{"id":2, "name":"VERYLONGNAMEPERSON"})
-```
-
-## Task 1 Input validation
-Create a pydantic class, that inherits from `BaseModel` and validates .
 
 ## Hello Types
+Create a function that will add headline as role description, it should have an `bool` type argument `upper`, that convert text to upper case letter.
+
+```
+def headline(text, upper):
+    if upper:
+        return f"{text.upper()}\n{'-' * len(text)}"
+    else:
+        return f"{text}\n{'-' * len(text)}"
+
+```
+
+Evaluate the function with your role description:
+```
+print(headline("Implement clean and scalable code.", upper = True))
+```
+
+
 ## Pros and Cons
+Pros:
+Type hints help document your code.
+Type hints improve IDEs and linters. (Check function).
+Type hints help you build and maintain a cleaner architecture.
+
+
+Cons:
+Type hints take developer time and effort to add.
 ## Annotations
-## Playing With Python Types, Part 1
-## Type Theory
-## Playing With Python Types, Part 2
+
+When running the code, you can also inspect the annotations. They are stored in a special .__annotations__ attribute on the function:
+
+```
+python -i headline.py
+headline.__annotations__
+```
+
 ## Static Type Checking
-## Conclusion
-## MYPY
+Refactor funtion to add type hints:
+
+```
+def headline(text: str, upper: bool = False) -> str:
+```
+Install `mypy`:
+```
+pip install mypy
+```
+
+Run `Mypy` on this code:
+
+```
+mypy headline.py
+
+```
+
+
+## Dynamic Type Checking
+Pydantic enforces type hints at **runtime** and provides user-friendly errors when data is invalid. Unlike the type hints introduced above which may seem cosmetic, the models introduced by pydantic are productive and would change your data.
+
+The file `user_model.py` implements the class with `dynamic type checking`.
+```
+from pydantic import BaseModel
+
+class User(BaseModel):
+    id: int
+    name: str
+```
+
+It can additionaly specify the `custom_validator`.
+How to fix the following errors:
+```
+python -i user_model.py
+u = User(id="2", name="VERYLONGNAMEPERSON", surname = "K")
+u = User(id=[1], name="VERYLONGNAMEPERSON",surname = "K")
+```
+
+Check the type of the attribute `id`:
+```
+u = User(id="2", name="kamila", surname = "kazimierska")
+type(u.id)
+```
+## Task 1 Type Checking
+Write the function with type checking that takes the user argument and
+print it in `title` format.
+
+## Task 2 Input validation
+Create a [pydantic class](https://docs.pydantic.dev/latest/usage/models/),
+that inherits from `BaseModel`
+has the name `Employee`,
+fields `name`, `surname`, `role`.
+
+## Task 3 Extend the employee
+Create a child subclass of `Employee`, add the fileld `techonologies` make sure it can take one of the available choices: ['Python', 'Angular', 'Docker', '.Net'].
+So, I can evaluate the following:
+
+```
+Developer(
+    name="K", surname="K", role="full-stack",
+    technologies = ["Python", "Angular"]
+)
+```
+
