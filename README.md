@@ -27,6 +27,12 @@ console.log(myString);
 myString = 2
 ```
 
+## Task 1
+Create an abstract class Shape that will enforce that any child class will need to implement the filed method.
+
+But why is Abstract Class not by default in Python like Java or other **Object Oriented Language**?
+Duck Typing relies on the concept of dynamically typed. As in Python, the variable type is assigned to object on run-time, thus in duck typing, you do not check type. Rather the presence of method is checked.
+
 **Duck typing**
 “if it walks like a duck and it quacks like a duck, then it must be a duck”
 Using duck typing you do not check types at all. Instead you check for the presence of a given method or attribute.
@@ -39,6 +45,16 @@ class TheHobbit:
 the_hobbit = TheHobbit()
 len(the_hobbit)
 ```
+
+Check the len of integer.
+
+```
+x = 123
+print(len(x))
+```
+
+# Task 2
+Implement the `IntLike` class that will define the `__len__` method.
 
 ## Hello Types
 In this section you’ll see how to add type hints to a function.
@@ -126,17 +142,17 @@ Check the type of the attribute `id`:
 u = User(id="2", name="kamila", surname = "kazimierska")
 type(u.id)
 ```
-## Task 1 Type Checking
+## Task 3 Type Checking
 Write the function with type checking that takes the user argument and
 print it in `title` format.
 
-## Task 2 Input validation
+## Task 4 Input validation
 Create a [pydantic class](https://docs.pydantic.dev/latest/usage/models/),
 that inherits from `BaseModel`
 has the name `Employee`,
 fields `name`, `surname`, `role`.
 
-## Task 3 Extend the employee
+## Task 5 Extend the employee
 Create a child subclass of `Employee`, add the fileld `techonologies` make sure it can take one of the available choices: ['Python', 'Angular', 'Docker', '.Net'].
 So, I can evaluate the following:
 
