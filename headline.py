@@ -1,4 +1,5 @@
-def headline(text: str, upper: bool = False) -> str:
+def headline(text: str, upper: bool):
+
     if upper:
         return f"{text.upper()}\n{'-' * len(text)}"
     else:
@@ -6,4 +7,4 @@ def headline(text: str, upper: bool = False) -> str:
 
 
 
-# print(headline("Implement clean and scalable code.", upper = "no"))
+print(headline("Implement clean and scalable code.", upper = "no"))
