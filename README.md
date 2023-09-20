@@ -173,3 +173,4 @@ Developer(
 [PEP 484](https://peps.python.org/pep-0484/)
 
 [Pydatnic](https://docs.pydantic.dev/latest/)
+[Abstract](https://medium.com/@vidipmalhotra/abstract-method-in-python-vs-duck-typing-6ef77fb816c)
