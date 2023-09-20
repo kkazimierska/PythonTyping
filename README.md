@@ -56,6 +56,8 @@ print(len(x))
 # Task 2
 Implement the `IntLike` class that will define the `__len__` method.
 
+
+The output above explains the duck typing clearly, as in above code it was not searching for the variable type rather it finds the particular method (in this case __len__).
 ## Hello Types
 In this section you’ll see how to add type hints to a function.
 Create a function that will add headline as role description, it should have an `bool` type argument `upper`, that convert text to upper case letter.
